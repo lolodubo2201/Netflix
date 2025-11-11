@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recherche Vidéo</title>
+</head>
+<body>
+
+<!-- Barre de recherche -->
+<form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Rechercher...">
+    <button type="submit">Recherche</button>
+</form>
+
+<!-- Vidéo YouTube -->
+<iframe id="videoFrame" width="560" height="315" 
+    src="" 
+    title="YouTube video player" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
+<script>
+    const form = document.getElementById('searchForm');
+    const input = document.getElementById('searchInput');
+    const iframe = document.getElementById('videoFrame');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Empêche le rechargement de la page
+
+        const query = input.value.trim().toLowerCase();
+
+        if(query === "drôle de prof 2") {
+            iframe.src = "https://www.youtube.com/embed/MOpJUpgGWRU?si=DBY01Ji2UywPO5z_";
+        } else {
+            iframe.src = ""; // Vide si aucun résultat
+            alert("Vidéo non trouvée !");
+        }
+    });
+</script>
+
+</body>
+</html>
