@@ -5,7 +5,9 @@
     <title>Recherche Vidéo</title>
 </head>
 <body>
-
+if (!netlifyIdentity.currentUser()) {
+  window.location.href = "/login.html"; // redirige vers login si pas connecté
+}
 <!-- Barre de recherche -->
 <form id="searchForm">
     <input type="text" id="searchInput" placeholder="Rechercher...">
