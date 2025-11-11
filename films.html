@@ -5,9 +5,7 @@
     <title>Recherche Vidéo</title>
 </head>
 <body>
-if (!netlifyIdentity.currentUser()) {
-  window.location.href = "/login.html"; // redirige vers login si pas connecté
-}
+    
 <!-- Barre de recherche -->
 <form id="searchForm">
     <input type="text" id="searchInput" placeholder="Rechercher...">
@@ -24,6 +22,9 @@ if (!netlifyIdentity.currentUser()) {
 </iframe>
 
 <script>
+    if (!netlifyIdentity.currentUser()) {
+  window.location.href = "/login.html"; // redirige vers login si pas connecté
+    }
     const form = document.getElementById('searchForm');
     const input = document.getElementById('searchInput');
     const iframe = document.getElementById('videoFrame');
