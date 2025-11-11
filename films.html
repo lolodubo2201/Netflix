@@ -22,9 +22,6 @@
 </iframe>
 
 <script>
-    if (!netlifyIdentity.currentUser()) {
-  window.location.href = "/index.html"; // redirige vers login si pas connecté
-    }
     const form = document.getElementById('searchForm');
     const input = document.getElementById('searchInput');
     const iframe = document.getElementById('videoFrame');
